@@ -1,0 +1,147 @@
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Form Validation (Optional)
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent the default form submission
+
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+  let message = document.getElementById('message').value;
+
+  // Simple validation
+  if (!name || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  // If everything is okay, show a success message
+  alert("Message sent successfully!");
+  // You can also reset the form after submission
+  this.reset();
+});
+<!--link tojavascript file>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecostyle Couture</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">Ecostyle Couture</h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Welcome to Ecostyle Couture Limited</h2>
+      <p>Where style meets sustainability</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        At Ecostyle Couture, we are passionate about creating garments and accessories
+        that combine timeless elegance with an eco-friendly touch.
+      </p>
+      <p>
+        <strong>Who We Are:</strong> Ecostyle Couture Limited is a full-service fashion and sewing company
+        dedicated to crafting high-quality garments for a variety of needs.
+      </p>
+      <p>
+        <strong>Our Vision:</strong> To become a leading name in the sustainable fashion industry by delivering exceptional products and services that inspire confidence and reflect care for the environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Custom-tailored suits</li>
+        <li>Wedding gowns</li>
+        <li>Corporate wears</li>
+        <li>School uniforms</li>
+        <li>Choir robes</li>
+        <li>Hospital wears</li>
+        <li>Eco-friendly bags</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Our Portfolio</h2>
+      <p>Showcase of our designs coming soon.</p>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2>Our Blog</h2>
+      <p>Stay tuned for fashion tips and updates.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Phone: 055 46 76 540</p>
+      <p>Email: <a href="mailto:ecostylecouture@gmail.com">ecostylecouture@gmail.com</a></p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ecostyle Couture Limited. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
